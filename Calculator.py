@@ -8,6 +8,8 @@ def multiply(num1,num2):
     return num1 * num2
 
 def divide(num1,num2):
+    if num2 == 0:
+        raise ValueError("Can't divided by zero.")
     return num1 / num2
 
 def avg(num1,num2):
@@ -23,22 +25,24 @@ def square_root(num1):
     return num1 ** 0.5
 
 def cube_root(num1):
-    return num1 ** (1/3)
+    return round(num1 ** (1/3))
 
 def percent(num1, num2):
+    if num2 == 0:
+        raise ValueError("Total can't be zero")
     return (num2 / num1)* 100
 
 print("Please select the operator: \n" \
-      "1. Addition\n" \
-      "2. Substract\n" \
-      "3. Multiplication\n" \
-      "4. Division\n" \
-      "5. Average\n" \
-      "6. Square\n"
-      "7. Cube\n" \
-      "8. Square root\n" \
-      "9. Cube root\n" \
-      "10. precentage\n")
+      "For Addition       : Press '1' \n" \
+      "For Substract      : Press '2'\n" \
+      "For Multiplication : Press '3'\n" \
+      "For Division       : Press '4'\n" \
+      "For Average        : Press '5'\n" \
+      "For Square         : Press '6'\n"
+      "For Cube           : Press '7'\n" \
+      "For Square root    : Press '8'\n" \
+      "For Cube root      : Press '9'\n" \
+      "For Percentage     : Press '10'\n")
 
 select = int(input("Select a operator from 1, 2, 3, 4, 5, 6, 7, 8, 9 or 10: "))
 
@@ -89,7 +93,7 @@ elif select == 10:
     number4 = int(input("Enter total number: "))
     number5 = int(input("Enter other number: "))
 
-    print("(", number4, "/" ,number5 ,") * 100 = ", \
+    print("(", number5, "/" ,number4 ,") * 100 = ", \
           percent(number4, number5))
 
 else:
