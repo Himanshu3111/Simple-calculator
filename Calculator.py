@@ -1,3 +1,5 @@
+import math
+
 def add(num1,num2):
     return num1 + num2
 
@@ -32,19 +34,23 @@ def percent(num1, num2):
         raise ValueError("Total can't be zero")
     return (num2 / num1)* 100
 
+def fact(num1):
+    return math.factorial(num1)
+
 print("Please select the operator: \n" \
       "For Addition       : Press '1' \n" \
       "For Substract      : Press '2'\n" \
       "For Multiplication : Press '3'\n" \
       "For Division       : Press '4'\n" \
       "For Average        : Press '5'\n" \
-      "For Square         : Press '6'\n"
+      "For Square         : Press '6'\n" \
       "For Cube           : Press '7'\n" \
       "For Square root    : Press '8'\n" \
       "For Cube root      : Press '9'\n" \
-      "For Percentage     : Press '10'\n")
+      "For Percentage     : Press '10'\n" \
+      "For Factorial      : Press '11'\n")
 
-select = int(input("Select a operator from 1, 2, 3, 4, 5, 6, 7, 8, 9 or 10: "))
+select = int(input("Select a operator from 1 to 11: "))
 
 if select in (1, 2, 3, 4, 5):
     number1 = int(input("Enter first number: "))
@@ -95,6 +101,10 @@ elif select == 10:
 
     print("(", number5, "/" ,number4 ,") * 100 = ", \
           percent(number4, number5))
+
+elif select == 11:
+    number6 = int(input("Enter the number:"))
+    print(fact(number6))
 
 else:
     print("Invalid operator.")
