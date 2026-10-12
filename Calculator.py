@@ -37,6 +37,16 @@ def percent(num1, num2):
 def fact(num1):
     return math.factorial(num1)
 
+def sin(num1):
+    return math.sin(math.radians(num1))
+
+def cos(num1):
+    return math.cos(math.radians(num1))
+
+def tan(num1):
+    return math.tan(math.radians(num1))
+
+
 print("Please select the operator: \n" \
       "For Addition       : Press '1' \n" \
       "For Substract      : Press '2'\n" \
@@ -48,9 +58,12 @@ print("Please select the operator: \n" \
       "For Square root    : Press '8'\n" \
       "For Cube root      : Press '9'\n" \
       "For Percentage     : Press '10'\n" \
-      "For Factorial      : Press '11'\n")
+      "For Factorial      : Press '11'\n" \
+      "For sin\u03B8      : Press '12'\n" \
+      "For cos\u03B8      : Press '13'\n" \
+      "For tan\u03b8      : press '14'\n" )
 
-select = int(input("Select a operator from 1 to 11: "))
+select = int(input("Select a operator from 1 to 14: "))
 
 if select in (1, 2, 3, 4, 5):
     number1 = int(input("Enter first number: "))
@@ -105,6 +118,16 @@ elif select == 10:
 elif select == 11:
     number6 = int(input("Enter the number:"))
     print(fact(number6))
+
+elif select in (12, 13, 14):
+    number7 = float(input("Enter the value of θ: "))
+
+    if select == 12:
+        print(f"sin({number7}) =", sin(number7))
+    elif select == 13:
+        print(f"cos({number7}) =", cos(number7))
+    else:
+        print(f"tan({number7}) =", tan(number7))
 
 else:
     print("Invalid operator.")
