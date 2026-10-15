@@ -8,6 +8,15 @@ A lightweight and easy-to-use calculator built to perform basic arithmetic opera
 * Subtraction (`-`)
 * Multiplication (`*`)
 * Division (`/`)
+* Average
+* Root
+* Square
+* Cube
+* Square root
+* Cube root
+* Percentage
+* Factorial
+* Trigonometry Functions (sin, cos, tan)
 
 ## How to Use
 
