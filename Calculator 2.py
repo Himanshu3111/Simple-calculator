@@ -49,6 +49,19 @@ def cos(num1):
 def tan(num1):
     return round(math.tan(math.radians(num1)), 4)
 
+def arcsin(num1):
+    if not -1 <= num1 <= 1:
+        raise ValueError("Inverse sine is defined for values from -1 to 1.")
+    return round(math.degrees(math.asin(num1)), 2)
+
+def arccos(num1):
+    if not -1 <= num1 <= 1:
+        raise ValueError("Inverse cosine is defined for values from -1 to 1.")
+    return round(math.degrees(math.acos(num1)), 2)
+
+def arctan(num1):
+    return round(math.degrees(math.atan(num1)), 2)
+
 
 def calculator():
     while True:
@@ -68,6 +81,9 @@ def calculator():
               "For sin\u03B8           : Press '13'\n"
               "For cos\u03B8           : Press '14'\n"
               "For tan\u03b8           : Press '15'\n"
+              "For inverse sin    : Press '16'\n"
+              "For inverse cos    : Press '17'\n"
+              "For inverse tan    : Press '18'\n"
               "To exit            : Press '0'\n")
 
         select = int(input("Select an operator (0 to exit): "))
@@ -120,12 +136,21 @@ def calculator():
             number7 = float(input("Enter the value of θ: "))
 
             if select == 13:
-                print(f"sin({number7}) =", sin(number7))
+                print(f"sin({number7}) = ", sin(number7))
             elif select == 14:
-                print(f"cos({number7}) =", cos(number7))
+                print(f"cos({number7}) = ", cos(number7))
             else:
-                print(f"tan({number7}) =", tan(number7))
+                print(f"tan({number7}) = ", tan(number7))
 
+        elif select in (16, 17, 18):
+            number8 = float(input("Enter the value: "))
+
+            if select == 16:
+                print(f"sin\u207B\u00B9({number8}) = ", arcsin(number8))
+            elif select == 17:
+                print(f"cos\u207B\u00B9({number8}) = ", arccos(number8))
+            else:
+                print(f"tan\u207B\u00B9({number8}) = ", arctan(number8))
         else:
             print("Invalid operator.")
 
