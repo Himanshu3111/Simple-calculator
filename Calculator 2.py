@@ -1,4 +1,5 @@
 import math
+from builtins import print
 
 def add(num1,num2):
     return num1 + num2
@@ -62,6 +63,9 @@ def arccos(num1):
 def arctan(num1):
     return round(math.degrees(math.atan(num1)), 2)
 
+def log(num1,num2):
+    return round(math.log(num1,num2), 4)
+
 
 def calculator():
     while True:
@@ -81,9 +85,10 @@ def calculator():
               "For sin\u03B8           : Press '13'\n"
               "For cos\u03B8           : Press '14'\n"
               "For tan\u03b8           : Press '15'\n"
-              "For inverse sin    : Press '16'\n"
-              "For inverse cos    : Press '17'\n"
-              "For inverse tan    : Press '18'\n"
+              "For Inverse sin    : Press '16'\n"
+              "For Inverse cos    : Press '17'\n"
+              "For Inverse tan    : Press '18'\n"
+              "For log            : press '19'\n"
               "To exit            : Press '0'\n")
 
         select = int(input("Select an operator (0 to exit): "))
@@ -151,6 +156,12 @@ def calculator():
                 print(f"cos\u207B\u00B9({number8}) = ", arccos(number8))
             else:
                 print(f"tan\u207B\u00B9({number8}) = ", arctan(number8))
+
+        elif select == 19:
+            number9 = int(input("Base of log:"))
+            number10 = int(input("log of :"))
+            print(f"log base {number9} of {number10} = ", log(number10,number9))
+
         else:
             print("Invalid operator.")
 
