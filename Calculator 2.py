@@ -1,6 +1,4 @@
 import math
-from builtins import print
-
 def add(num1,num2):
     return num1 + num2
 
@@ -66,30 +64,41 @@ def arctan(num1):
 def log(num1,num2):
     return round(math.log(num1,num2), 4)
 
+def red_degree(num1):
+    return round(math.degrees(num1), 3)
+
+def degree_red(num1):
+    return round(math.radians(num1), 3)
+
 
 def calculator():
     while True:
-        print("Please select the operator: \n"
-              "For Addition       : Press '1' \n"
-              "For Substract      : Press '2'\n"
-              "For Multiplication : Press '3'\n"
-              "For Division       : Press '4'\n"
-              "For Average        : Press '5'\n"
-              "For Root           : Press '6'\n"
-              "For Square         : Press '7'\n"
-              "For Cube           : Press '8'\n"
-              "For Square root    : Press '9'\n"
-              "For Cube root      : Press '10'\n"
-              "For Percentage     : Press '11'\n"
-              "For Factorial      : Press '12'\n"
-              "For sin\u03B8           : Press '13'\n"
-              "For cos\u03B8           : Press '14'\n"
-              "For tan\u03b8           : Press '15'\n"
-              "For Inverse sin    : Press '16'\n"
-              "For Inverse cos    : Press '17'\n"
-              "For Inverse tan    : Press '18'\n"
-              "For log            : press '19'\n"
-              "To exit            : Press '0'\n")
+        print("================================")
+        print("           CALCULATOR")
+        print("================================\n"
+              "Please select the operator: \n"
+              "For Addition         : Press '1' \n"
+              "For Subtraction      : Press '2'\n"
+              "For Multiplication   : Press '3'\n"
+              "For Division         : Press '4'\n"
+              "For Average          : Press '5'\n"
+              "For Root             : Press '6'\n"
+              "For Square           : Press '7'\n"
+              "For Cube             : Press '8'\n"
+              "For Square root      : Press '9'\n"
+              "For Cube root        : Press '10'\n"
+              "For Percentage       : Press '11'\n"
+              "For Factorial        : Press '12'\n"
+              "For sin\u03B8             : Press '13'\n"
+              "For cos\u03B8             : Press '14'\n"
+              "For tan\u03b8             : Press '15'\n"
+              "For Inverse sin      : Press '16'\n"
+              "For Inverse cos      : Press '17'\n"
+              "For Inverse tan      : Press '18'\n"
+              "For log              : Press '19'\n"
+              "For Radian to Degree : Press '20'\n"
+              "For Degree to Radian : Press '21'\n"
+              "To exit              : Press '0'\n")
 
         select = int(input("Select an operator (0 to exit): "))
         if select == 0:
@@ -161,6 +170,14 @@ def calculator():
             number9 = int(input("Base of log:"))
             number10 = int(input("log of :"))
             print(f"log base {number9} of {number10} = ", log(number10,number9))
+
+        elif select == 20:
+            number10 = float(input("Enter the value of Radians: "))
+            print(f"{number10} radian = ", red_degree(number10))
+
+        elif select == 21:
+                    number11 = float(input("Enter the value of Degrees: "))
+                    print(f"{number11} radian = ", degree_red(number11))
 
         else:
             print("Invalid operator.")
